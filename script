@@ -1,3 +1,5 @@
 #!/bin/bash
-yum install ngnix -y
-aws s3 cp s3://aws-codedeploy-us-east-1/latest/codedeploy-agent.msi codedeploy-agent.msi
+sudo yum install ngnix -y
+sudo aws s3 cp s3://aws-codedeploy-us-east-1/latest/codedeploy-agent.msi codedeploy-agent.msi
+sudo systemctl start nginx
+sudo systemctl enable nginx
