@@ -1,5 +1,8 @@
 #!/bin/bash
-sudo yum install ngnix -y
-sudo aws s3 cp s3://aws-codedeploy-us-east-1/latest/codedeploy-agent.msi codedeploy-agent.msi
-sudo systemctl start nginx
-sudo systemctl enable nginx
+sudo yum -y install wget
+cd /home/ec2/-user
+wget  https://aws-codedeploy-us-east-1.s3.amazonaws.com/latest/codedeploy-agent.msi
+sudo chmod +x ./install
+sudo ./install auto
+sudo yum install -y python-pip
+sudo pip install awscli
